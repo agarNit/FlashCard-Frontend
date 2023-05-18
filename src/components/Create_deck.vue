@@ -35,7 +35,7 @@
     methods: {
         async handleSubmit() {
             try{
-                const response = await axios.post(`${process.env.VUE_APP_BASE_URL}/${this.user}/dashboard`, {
+                const response = await axios.post(`https://flashcard-ms.onrender.com/${this.user}/dashboard`, {
                 deck_name: this.deck_name,
                 });
                 this.$router.push({ path: '/dashboard' })

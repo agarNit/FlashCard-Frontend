@@ -40,7 +40,7 @@
     methods: {
         async handleSubmit() {
             try{
-                const response = await axios.post(`${process.env.VUE_APP_BASE_URL}/${sessionStorage.getItem('user')}/${sessionStorage.getItem('deck_id')}/card`, {
+                const response = await axios.post(`https://flashcard-ms.onrender.com/${sessionStorage.getItem('user')}/${sessionStorage.getItem('deck_id')}/card`, {
                 card_front: this.card_front,
                 card_back: this.card_back
                 });

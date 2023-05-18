@@ -39,7 +39,7 @@
     methods: {
         async handleSubmit() {
             try{
-                const response = await axios.put(`${process.env.VUE_APP_BASE_URL}/${sessionStorage.getItem('user')}/dashboard/${sessionStorage.getItem('deck_name')}/update`, {
+                const response = await axios.put(`https://flashcard-ms.onrender.com/${sessionStorage.getItem('user')}/dashboard/${sessionStorage.getItem('deck_name')}/update`, {
                 deck_name: this.deck_name,
                 });
                 sessionStorage.removeItem('deck_name')

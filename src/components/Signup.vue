@@ -60,7 +60,7 @@
     methods: {
         async handleSubmit() {
             try{
-                const response = await axios.post(`${process.env.VUE_APP_BASE_URL}/signup`, {
+                const response = await axios.post(`https://flashcard-ms.onrender.com/signup`, {
                     name: this.name,
                     email: this.email,
                     password: this.password,

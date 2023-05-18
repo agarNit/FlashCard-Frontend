@@ -45,12 +45,12 @@
     },
     methods: {
       del(deck_id) {
-        const response1 = axios.delete(`${process.env.VUE_APP_BASE_URL}/${this.user}/dashboard/${deck_id}/delete`);
+        const response1 = axios.delete(`https://flashcard-ms.onrender.com/${this.user}/dashboard/${deck_id}/delete`);
         this.decks = response1;
         location.reload()
       },
       reset(deck_id) {
-        const response = axios.get(`${process.env.VUE_APP_BASE_URL}/decks/${deck_id}/reset`);
+        const response = axios.get(`https://flashcard-ms.onrender.com/decks/${deck_id}/reset`);
         location.reload()
       },
       send1(deck_name) {
@@ -64,7 +64,7 @@
     },
     async created() {
       try{
-        const response = await axios.get(`${process.env.VUE_APP_BASE_URL}/user`, {
+        const response = await axios.get(`https://flashcard-ms.onrender.com/user`, {
         headers: {
           'Content-Type': 'application/json',
           'x-access-token': sessionStorage.getItem('token')
@@ -72,7 +72,7 @@
         });
         this.user = response.data.name;
         sessionStorage.setItem('user', response.data.name);
-        const res = await axios.get(`${process.env.VUE_APP_BASE_URL}/${this.user}/dashboard`);
+        const res = await axios.get(`https://flashcard-ms.onrender.com/${this.user}/dashboard`);
         this.decks = res.data.decks; 
         const reloaded = sessionStorage.getItem('reloaded');
         if (reloaded !== 'true') {

@@ -43,7 +43,7 @@
     },
     methods: {
       del(card_front,deck_id) {
-        const response = axios.delete(`${process.env.VUE_APP_BASE_URL}/${deck_id}/${card_front}/delete`);
+        const response = axios.delete(`https://flashcard-ms.onrender.com/${deck_id}/${card_front}/delete`);
         this.cards = response
         location.reload()
         
@@ -53,22 +53,22 @@
       },
       flip_easy(card, card_id) {
         card.state=!card.state
-        const response = axios.get(`${process.env.VUE_APP_BASE_URL}/cards/${card_id}/easy`);
+        const response = axios.get(`https://flashcard-ms.onrender.com/cards/${card_id}/easy`);
         location.reload()
       },
       flip_medium(card, card_id) {
         card.state=!card.state
-        const response = axios.get(`${process.env.VUE_APP_BASE_URL}/cards/${card_id}/medium`);
+        const response = axios.get(`https://flashcard-ms.onrender.com/cards/${card_id}/medium`);
         location.reload()
       },
       flip_difficult(card, card_id) {
         card.state=!card.state
-        const response = axios.get(`${process.env.VUE_APP_BASE_URL}/cards/${card_id}/difficult`);
+        const response = axios.get(`https://flashcard-ms.onrender.com/cards/${card_id}/difficult`);
         location.reload()
       }
     },
     async created() {
-      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}/${sessionStorage.getItem('user')}/${sessionStorage.getItem('deck_id')}/cards`);
+      const res = await axios.get(`https://flashcard-ms.onrender.com/${sessionStorage.getItem('user')}/${sessionStorage.getItem('deck_id')}/cards`);
       this.cards = res.data.cards;
       sessionStorage.setItem('cards', this.cards);
       const reloaded = sessionStorage.getItem('reloaded');

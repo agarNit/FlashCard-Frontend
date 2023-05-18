@@ -41,7 +41,7 @@
     methods: {
         async handleSubmit() {
             try{
-                const response = await axios.put(`${process.env.VUE_APP_BASE_URL}/${sessionStorage.getItem('deck_id')}/${sessionStorage.getItem('card_front')}/update`, {
+                const response = await axios.put(`https://flashcard-ms.onrender.com/${sessionStorage.getItem('deck_id')}/${sessionStorage.getItem('card_front')}/update`, {
                 card_front: this.card_front, card_back: this.card_back
                 });
                 this.$router.push({ path: '/cards' })

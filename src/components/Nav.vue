@@ -76,7 +76,7 @@
       handleClick() {
         sessionStorage.removeItem('token');
         sessionStorage.removeItem('user');
-                this.$router.push({ path: '/login' })
+        this.$router.push({ path: '/login' })
         location.reload()
       },
       onClick() {
@@ -88,7 +88,7 @@
         
       },
       async download_pdf() {
-        await axios({url: `${process.env.VUE_APP_BASE_URL}/${sessionStorage.getItem('user')}/export`, method: 'GET',responseType: 'blob',
+        await axios({url: `https://flashcard-ms.onrender.com/${sessionStorage.getItem('user')}/export`, method: 'GET',responseType: 'blob',
         }).then((response) => {
           var fileURL = window.URL.createObjectURL(new Blob([response.data]));
           console.log(fileURL)
@@ -104,7 +104,7 @@
       }, 
       async export_pdf() {
         try{
-          await axios.get(`${process.env.VUE_APP_BASE_URL}/send/${sessionStorage.getItem('user')}`);
+          await axios.get(`https://flashcard-ms.onrender.com/send/${sessionStorage.getItem('user')}`);
           alert("PDF report successfully sent to mail !")
         }
         catch(e){
@@ -112,7 +112,7 @@
         }
       },
       async delete_account() {
-          await axios.get(`${process.env.VUE_APP_BASE_URL}/${sessionStorage.getItem('user')}/signout`);
+          await axios.get(`https://flashcard-ms.onrender.com/${sessionStorage.getItem('user')}/signout`);
           sessionStorage.removeItem('token');
           sessionStorage.removeItem('user');
           this.$router.push({ path: '/signup' })

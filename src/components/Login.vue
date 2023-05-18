@@ -42,13 +42,13 @@
     methods: {
         async handleSubmit() {
             try{
-                const response = await axios.post(`${process.env.VUE_APP_BASE_URL}/login`, {
+                const response = await axios.post(`https://flashcard-ms.onrender.com/login`, {
                 email: this.email,
                 password: this.password,
                 });
                 sessionStorage.setItem('token', response.data.token);
                 sessionStorage.setItem('reloaded', false);
-                this.$router.push({ path: '/dashboard' })
+                this.$router.push('/dashboard')
             } catch(e){
                 this.error = e.response.data.message;
             } 
