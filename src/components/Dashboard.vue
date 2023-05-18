@@ -77,7 +77,7 @@
         const reloaded = sessionStorage.getItem('reloaded');
         if (reloaded !== 'true') {
             sessionStorage.setItem('reloaded', 'true');
-            // location.reload()
+            location.reload()
         } 
       }
       catch(e){
@@ -85,7 +85,7 @@
         const reloaded = sessionStorage.getItem('reloaded');
         if (reloaded !== 'false') {
             sessionStorage.setItem('reloaded', 'false');
-            // location.reload()
+            location.reload()
         } 
       }
     },

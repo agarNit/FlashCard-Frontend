@@ -45,7 +45,7 @@
       del(card_front,deck_id) {
         const response = axios.delete(`https://flashcard-ms.onrender.com/${deck_id}/${card_front}/delete`);
         this.cards = response
-        // location.reload()
+        location.reload()
         
       },
       send(card_front) {
@@ -54,17 +54,17 @@
       flip_easy(card, card_id) {
         card.state=!card.state
         const response = axios.get(`https://flashcard-ms.onrender.com/cards/${card_id}/easy`);
-        // location.reload()
+        location.reload()
       },
       flip_medium(card, card_id) {
         card.state=!card.state
         const response = axios.get(`https://flashcard-ms.onrender.com/cards/${card_id}/medium`);
-        // location.reload()
+        location.reload()
       },
       flip_difficult(card, card_id) {
         card.state=!card.state
         const response = axios.get(`https://flashcard-ms.onrender.com/cards/${card_id}/difficult`);
-        // location.reload()
+        location.reload()
       }
     },
     async created() {
@@ -74,7 +74,7 @@
       const reloaded = sessionStorage.getItem('reloaded');
       if (reloaded !== 'false') {
           sessionStorage.setItem('reloaded', 'false');
-          // location.reload();
+          location.reload();
       } 
     }
   }
