@@ -28,6 +28,8 @@
 <script>
 
     import axios from 'axios';
+    import routes from './../router/index.js';
+
     export default {
     name: 'Login',
     data() {
@@ -46,7 +48,7 @@
                 });
                 sessionStorage.setItem('token', response.data.token);
                 sessionStorage.setItem('reloaded', false);
-                this.$router.go('/dashboard');
+                this.$router.push({ path: '/dashboard' })
             } catch(e){
                 this.error = e.response.data.message;
             } 

@@ -27,6 +27,7 @@
 <script>
 
     import axios from 'axios';
+    import routes from './../router/index.js';
 
     export default {
     name: 'Update_card',
@@ -43,7 +44,7 @@
                 const response = await axios.put(`${process.env.VUE_APP_BASE_URL}/${sessionStorage.getItem('deck_id')}/${sessionStorage.getItem('card_front')}/update`, {
                 card_front: this.card_front, card_back: this.card_back
                 });
-                this.$router.go('/cards');
+                this.$router.push({ path: '/cards' })
                 sessionStorage.removeItem('card_front')
             } catch(e){
                 this.error = "Some error occured.";

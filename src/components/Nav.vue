@@ -61,6 +61,8 @@
 <script>
    import {mapGetters} from 'vuex';
    import axios from 'axios';
+   import routes from './../router/index.js';
+
 
   export default {
     name: 'Nav',
@@ -74,7 +76,7 @@
       handleClick() {
         sessionStorage.removeItem('token');
         sessionStorage.removeItem('user');
-        this.$router.go('/login')
+                this.$router.push({ path: '/login' })
         location.reload()
       },
       onClick() {
@@ -113,7 +115,7 @@
           await axios.get(`${process.env.VUE_APP_BASE_URL}/${sessionStorage.getItem('user')}/signout`);
           sessionStorage.removeItem('token');
           sessionStorage.removeItem('user');
-          this.$router.go('/signup')
+          this.$router.push({ path: '/signup' })
       }
     },
 

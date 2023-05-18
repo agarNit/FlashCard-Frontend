@@ -23,6 +23,7 @@
 
     import {mapGetters} from 'vuex';
     import axios from 'axios';
+    import routes from './../router/index.js';
 
     export default {
     name: 'Update_deck',
@@ -42,7 +43,7 @@
                 deck_name: this.deck_name,
                 });
                 sessionStorage.removeItem('deck_name')
-                this.$router.go('/dashboard');
+                this.$router.push({ path: '/dashboard' })
             } catch(e){
                 this.error = "Some error occured.";
             }

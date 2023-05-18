@@ -21,6 +21,7 @@
 <script>
 
     import axios from 'axios';
+    import routes from './../router/index.js';
 
     export default {
     name: 'Create_deck',
@@ -37,7 +38,7 @@
                 const response = await axios.post(`${process.env.VUE_APP_BASE_URL}/${this.user}/dashboard`, {
                 deck_name: this.deck_name,
                 });
-                this.$router.go('/dashboard');
+                this.$router.push({ path: '/dashboard' })
                 
             } catch(e){
                 this.error = e.response.data.message;

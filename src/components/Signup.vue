@@ -43,6 +43,9 @@
 <script>
 
     import axios from 'axios';
+    import routes from './../router/index.js';
+
+
     export default {
     name: 'Signup',
     data() {
@@ -63,7 +66,7 @@
                     password: this.password,
                     confirm_password: this.confirm_password
                 });
-                this.$router.go('/login');
+                this.$router.push({ path: '/login' })
             } catch(e){
                 this.error = e.response.data.message;
             }

@@ -8,6 +8,8 @@
 
 <script>
   import {mapGetters} from 'vuex';
+  import routes from './../router/index.js';
+
 
   export default {
     name: 'Home',

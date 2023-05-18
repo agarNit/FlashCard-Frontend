@@ -26,6 +26,7 @@
 <script>
 
     import axios from 'axios';
+    import routes from './../router/index.js';
 
     export default {
     name: 'Create_card',
@@ -43,7 +44,7 @@
                 card_front: this.card_front,
                 card_back: this.card_back
                 });
-                this.$router.go('/cards');
+                this.$router.push({ path: '/cards' })
             } catch(e){
                 this.error = e.response.data.message
             }

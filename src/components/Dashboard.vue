@@ -29,6 +29,8 @@
 <script>
   import {mapGetters} from 'vuex';
   import axios from 'axios';
+  import routes from './../router/index.js';
+
   export default {
     name: 'Dashboard',
     computed: {
@@ -56,7 +58,7 @@
       },
       send2(deck_id) {
         sessionStorage.setItem('deck_id', deck_id)
-        this.$router.go('/cards')
+        this.$router.push({ path: '/cards' })
         location.reload()
       }
     },

@@ -26,8 +26,11 @@
 
 <script>
 
-import {mapGetters} from 'vuex';
+  import {mapGetters} from 'vuex';
   import axios from 'axios';
+  import routes from './../router/index.js';
+
+
   export default {
     name: 'Cards',
     computed: {
