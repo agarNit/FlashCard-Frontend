@@ -77,14 +77,14 @@
         sessionStorage.removeItem('token');
         sessionStorage.removeItem('user');
         this.$router.push({ path: '/login' })
-        location.reload()
+        // location.reload()
       },
       onClick() {
         sessionStorage.removeItem('deck_id')
         sessionStorage.removeItem('deck_name')
         sessionStorage.removeItem('cards')
         sessionStorage.setItem('reloaded', 'true')
-        location.reload();
+        // location.reload();
         
       },
       async download_pdf() {
