@@ -37,7 +37,7 @@
                 const response = await axios.post(`${process.env.VUE_APP_BASE_URL}/${this.user}/dashboard`, {
                 deck_name: this.deck_name,
                 });
-                this.$router.push('/dashboard');
+                this.$router.go('/dashboard');
                 
             } catch(e){
                 this.error = e.response.data.message;

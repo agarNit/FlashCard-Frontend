@@ -63,7 +63,7 @@
                     password: this.password,
                     confirm_password: this.confirm_password
                 });
-                this.$router.push('/login');
+                this.$router.go('/login');
             } catch(e){
                 this.error = e.response.data.message;
             }

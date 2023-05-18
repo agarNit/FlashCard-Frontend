@@ -74,7 +74,7 @@
       handleClick() {
         sessionStorage.removeItem('token');
         sessionStorage.removeItem('user');
-        this.$router.push('/login')
+        this.$router.go('/login')
         location.reload()
       },
       onClick() {
@@ -113,7 +113,7 @@
           await axios.get(`${process.env.VUE_APP_BASE_URL}/${sessionStorage.getItem('user')}/signout`);
           sessionStorage.removeItem('token');
           sessionStorage.removeItem('user');
-          this.$router.push('/signup')
+          this.$router.go('/signup')
       }
     },
 

@@ -43,7 +43,7 @@
                 card_front: this.card_front,
                 card_back: this.card_back
                 });
-                this.$router.push('/cards');
+                this.$router.go('/cards');
             } catch(e){
                 this.error = e.response.data.message
             }

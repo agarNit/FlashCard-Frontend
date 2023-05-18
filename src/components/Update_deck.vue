@@ -42,7 +42,7 @@
                 deck_name: this.deck_name,
                 });
                 sessionStorage.removeItem('deck_name')
-                this.$router.push('/dashboard');
+                this.$router.go('/dashboard');
             } catch(e){
                 this.error = "Some error occured.";
             }

@@ -46,7 +46,7 @@
                 });
                 sessionStorage.setItem('token', response.data.token);
                 sessionStorage.setItem('reloaded', false);
-                this.$router.push('/dashboard');
+                this.$router.go('/dashboard');
             } catch(e){
                 this.error = e.response.data.message;
             } 

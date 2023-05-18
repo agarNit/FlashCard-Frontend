@@ -56,7 +56,7 @@
       },
       send2(deck_id) {
         sessionStorage.setItem('deck_id', deck_id)
-        this.$router.push('/cards')
+        this.$router.go('/cards')
         location.reload()
       }
     },
