@@ -10,11 +10,11 @@
         <div class="card-body text-primary">
           <h5 class="card-title deck_text">Card Score: {{card.card_score}}</h5>
           <router-link to="/update_card" @click.native="send(card.card_front)"><input type="submit" class="dash_update" v-show="!card.state" value="Update"></router-link>
-            <a href="javascript:void(0)" @click.native="del(card.card_front,card.deck_id)"><input type="submit" class="dash_update" v-show="!card.state" value="Delete"></a>
+            <a href="javascript:void(0)" @click="del(card.card_front,card.deck_id)"><input type="submit" class="dash_update" v-show="!card.state" value="Delete"></a>
             <button class="dash_update" v-show="!card.state" @click="card.state=!card.state">Answer</button>
-            <button class="dash_update" v-show="card.state" @click.native="flip_easy(card,card.card_id)">Easy</button>
-            <button class="dash_update" v-show="card.state" @click.native="flip_medium(card,card.card_id)">Medium</button>
-            <button class="dash_update" v-show="card.state" @click.native="flip_difficult(card,card.card_id)">Difficult</button> 
+            <button class="dash_update" v-show="card.state" @click="flip_easy(card,card.card_id)">Easy</button>
+            <button class="dash_update" v-show="card.state" @click="flip_medium(card,card.card_id)">Medium</button>
+            <button class="dash_update" v-show="card.state" @click="flip_difficult(card,card.card_id)">Difficult</button> 
         </div>
         <div class="card-footer">
           <small class="text-muted ">Last reviewed on {{card.card_last_review_time}}</small>
