@@ -32,10 +32,10 @@
             error: ''
         }
     },
-    computed: {
-        ...mapGetters(['deck']),
-        ...mapGetters(['user']),
-    },
+    // computed: {
+    //     ...mapGetters(['deck']),
+    //     ...mapGetters(['user']),
+    // },
     methods: {
         async handleSubmit() {
             try{
