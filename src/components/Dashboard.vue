@@ -12,7 +12,7 @@
         <div class="card-header" @click="send2(deck.deck_id)"><h5><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-collection" viewBox="0 0 16 16"><path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/></svg>&ensp;{{deck.deck_name}}</h5></div>
         <div class="card-body text-primary">
           <h5 class="card-title deck_text">Deck Score: {{deck.deck_score}}</h5>
-          <router-link to="/update_deck" @click="send1(deck.deck_name)"><input type="submit" class="dash_update" value="Update"></router-link>
+          <router-link to="/update_deck" @click.native="send1(deck.deck_name)"><input type="submit" class="dash_update" value="Update"></router-link>
           <a href="javascript:void(0)" @click="del(deck.deck_id)"><input type="submit" class="dash_update" value="Delete"></a>
           <a href="javascript:void(0)" @click="reset(deck.deck_id)"><input type="submit" class="dash_update" value="Reset"></a>
         </div>
