@@ -44,7 +44,7 @@
     methods: {
       del(card_front,deck_id) {
         const response = axios.delete(`https://flashcard-ms.onrender.com/${deck_id}/${card_front}/delete`);
-        this.cards = response
+        this.cards = response;
         location.reload()
         
       },
@@ -52,17 +52,17 @@
         sessionStorage.setItem('card_front', card_front)
       },
       flip_easy(card, card_id) {
-        card.state=!card.state
+        card.state=!card.state;
         const response = axios.get(`https://flashcard-ms.onrender.com/cards/${card_id}/easy`);
         location.reload()
       },
       flip_medium(card, card_id) {
-        card.state=!card.state
+        card.state=!card.state;
         const response = axios.get(`https://flashcard-ms.onrender.com/cards/${card_id}/medium`);
         location.reload()
       },
       flip_difficult(card, card_id) {
-        card.state=!card.state
+        card.state=!card.state;
         const response = axios.get(`https://flashcard-ms.onrender.com/cards/${card_id}/difficult`);
         location.reload()
       }
