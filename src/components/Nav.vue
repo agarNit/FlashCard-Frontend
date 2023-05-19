@@ -108,6 +108,7 @@
           alert("PDF report successfully sent to mail !")
         }
         catch(e){
+          print(e)
           alert("Download PDF to export.")
         }
       },
